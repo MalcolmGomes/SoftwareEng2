@@ -1,0 +1,28 @@
+version: '3'
+services:
+        classify-service:
+                build: ./classifier
+                volumes: 
+                        - ./classifier:/usr/src/app
+                ports:
+                        - 5001:80
+        salient-service:
+                build: ./saliencymapper
+                volumes: 
+                        - ./saliencymapper:/usr/src/app
+                ports:
+                        - 5002:80
+        transfer-service:
+                build: ./styletransfer
+                volumes: 
+                        - ./styletransfer:/usr/src/app
+                ports:
+                        - 5003:80        
+        website:
+                image: php:apache
+                volumes: 
+                        - ./website:/var/www/html
+                ports:
+                        - 5000:80
+                depends_on:
+                        - classify-service
