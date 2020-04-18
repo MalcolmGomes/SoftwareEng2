@@ -59,6 +59,6 @@ if __name__ == '__main__':
     img = Image.open(filename)          
     print("Running saliency mapper neural network on image:", filename)  
     result = generate_saliency_map(img, filename)
-    Image.show(result)
+    Image.open(result).show()    
     if (urlBool): os.remove(filename)
     input("\nExecution Complete.")

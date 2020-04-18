@@ -1,6 +1,3 @@
-# SoftwareEng2
-Software Engineering 2 Project - Containerizing Deep Learning models
-
 CP 8202: Advanced Software Engineering Project
 
 Name: Malcolm Gomes
